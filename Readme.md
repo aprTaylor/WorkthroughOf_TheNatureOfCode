@@ -3,4 +3,5 @@ This repo's focus is following along with Daniel Shiffman's [book](http://nature
 ## Live Exercises
 
 [Random Walker](http://agray5.com/WorkthroughOf_TheNatureOfCode/)
-[Random Walker](http://agray5.com/RandWalkerWithExpontlDist/)
+
+[Random Walker with Exponential Distribution](http://agray5.com/RandWalkerWithExpontlDist/)
