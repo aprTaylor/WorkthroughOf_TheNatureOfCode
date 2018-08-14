@@ -57,7 +57,7 @@ let walker;
 
 function setup() {
   createCanvas(720, 400);
-  background(127);
+  background(255);
 
   walker = new Walker();
 

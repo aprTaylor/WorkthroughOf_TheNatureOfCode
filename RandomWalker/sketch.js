@@ -47,7 +47,7 @@ var rSlider, lSlider, uSlider;
 
 function setup() {
   createCanvas(720, 400);
-  background(127);
+  background(255);
 
   rSlider = createSlider(0, 50, 25);
   rSlider.position(20, 20);

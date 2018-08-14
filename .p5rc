@@ -1,0 +1,9 @@
+{
+  "name": "NatureOfCode",
+  "projects": [
+    "Vector",
+    "RandomWalker",
+    "RandomWalkerExponential",
+    "Car"
+  ]
+}
