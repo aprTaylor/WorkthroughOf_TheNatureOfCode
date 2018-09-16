@@ -4,6 +4,8 @@
     "Vector",
     "RandomWalker",
     "RandomWalkerExponential",
-    "Car"
+    "Car",
+    "vectorPerlin",
+    "Ecosystem"
   ]
 }
