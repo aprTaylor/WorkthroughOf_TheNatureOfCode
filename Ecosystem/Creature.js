@@ -41,9 +41,20 @@ class Creature{
 }
 
 class Fly extends Creature{
+    constructor(location, world, velcoityLimit = 5){
+      super(location, world, velcoityLimit);
+      this.TIMER_LAND = 1000;
+      this.timer= {land: this.TIMER_LAND};
+      this.stop = false;
+    }
     animate(){
+      if(!this.stop){
         this.acceleration = p5.Vector.random2D();
         this.acceleration.setMag(0.5);
+      }
+      else
+        this.acceleration = createVector(0, 0);
+        
     }
 
     checkEdges() {
@@ -51,7 +62,14 @@ class Fly extends Creature{
           this.velocity.x *= -1;
         }
      
-        if (this.location.y > this.world.land.y-10 || this.location.y < 0) {
+        if(this.location.y == this.world.land && this.timer.land > 0){
+          this.stop = true;
+          this.timer.land--;
+          if(this.timer.land <= 0){
+            this.timer = this.TIMER_LAND;
+          }
+        }
+        else if (this.location.y > this.world.land.y|| this.location.y < 0) {
           this.velocity.y *= -1;
         }
       }
