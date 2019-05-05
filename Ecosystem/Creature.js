@@ -62,34 +62,76 @@ class Rabbit extends Creature {
 }
 
 class Fly extends Creature{
-    constructor(location, world, velocityLimit = 5){
-      super(location, world, velocityLimit);
-      this.TIMER_LAND = 1000;
-      this.timer= {land: this.TIMER_LAND};
-      this.stop = false;
+  constructor(location, world, velocityLimit = 5){
+    super(location, world, velocityLimit);
+    this.TIMER_LAND = 1000;
+    this.timer= {land: undefined};
+    this.stop = false;
+  }
+  animate() {
+    if(!this.stop){
+      this.acceleration = p5.Vector.random2D();
+      this.acceleration.setMag(0.5);
     }
-    animate() {
-      if(!this.stop){
-        this.acceleration = p5.Vector.random2D();
-        this.acceleration.setMag(0.5);
-      }
-      else
-        this.acceleration = createVector(0, 0);
-        
-    }
+    else
+      this.acceleration = createVector(0, 0);  
+  }
 
-    checkEdges() {
-        super.checkEdges()
+  checkEdges() {
+    super.checkEdges()
      
-        if(this.location.y == this.world.land && this.timer.land > 0){
-          this.stop = true;
-          this.timer.land--;
-          if(this.timer.land <= 0){
-            this.timer = this.TIMER_LAND;
-          }
-        }
-        else if (this.location.y > this.world.land.y|| this.location.y < 0) {
-          this.velocity.y *= -1;
-        }
+    if(this.location.y == this.world.land && this.timer.land > 0){
+      this.stop = true;
+      this.timer.land--;
+      if(this.timer.land <= 0){
+        this.timer = this.TIMER_LAND;
       }
+    }
+    else if (this.location.y > this.world.land.y|| this.location.y < 0) {
+      this.velocity.y *= -1;
+    }
+  }
+}
+class Bird extends FlyingCreature {
+  constructor(location, world, velcoityLimit){
+    super(location, world, velcoityLimit);
+    this.flags = {birdDip: false, doBirdDipDown: true}
+    this.birdDipHeight = 100;
+    this.dipChance = 3;
+    this.dip = true;
+    this.frames = 200;
+    this.setAcc();
+  }
+  setAcc(){
+    this.acceleration = createVector(0.1, 0.1);
+    this.acceleration.setMag(0.5);
+  }
+  animate(){
+    if(this.dip){
+      this.dip = false;
+    }
+    else
+    this.acceleration = createVector(0, 0);
+    //this.setAcc();
+    /*
+    this.acceleration = createVector(0.005, 0.02);
+    this.acceleration.y *= this.dip?1:-1;
+    this.frames--;
+    if(this.frames < 0){
+      this.frames = 10;
+      this.dip = !this.dip;
+    }
+    /*
+    if(this.flags.birdDip){
+      let dipMult =  this.flags.doBirdDipDown?1:-1; 
+      this.acceleration = createVector(0, this.birdDipHeight*dipMult);
+      this.flags.birdDip = this.doBirdDipDown;
+      this.doBirdDipDown = !this.doBirdDipDown;
+    }
+    else {
+      this.acceleration = p5.Vector.random2D();
+      this.acceleration.setMag(0.5);
+      this.flags.birdDip = random(this.dipChance) == this.dipChance;
+    }*/
+  }
 }
