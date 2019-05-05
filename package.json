@@ -1,0 +1,25 @@
+{
+  "name": "natureofcode",
+  "version": "1.0.0",
+  "description": "This repo's focus is following along with Daniel Shiffman's [book](http://natureofcode.com/) and [video series](https://www.youtube.com/watch?v=6vX8wT1G798&list=PLRqwX-V7Uu6aFlwukCmDf0-1-uSR7mklK&index=1) on *The Nature of Code*",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agray5/WorkthroughOf_TheNatureOfCode.git"
+  },
+  "author": "April Gray <aprgray5@gmail.com> (https://agray5.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agray5/WorkthroughOf_TheNatureOfCode/issues"
+  },
+  "homepage": "https://github.com/agray5/WorkthroughOf_TheNatureOfCode#readme",
+  "dependencies": {
+    "p5-manager": "^0.4.2"
+  }
+}

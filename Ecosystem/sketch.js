@@ -8,7 +8,9 @@ function setup() {
 		land: {y: height-100, x: 0, height: 100, width: width, color: color(34,139,34)}  	
 	}
 
-	creatures = [new Creature(createVector(100, 100), world), new Fly(createVector(150, 100), world)];
+	creatures = [new Creature(createVector(100, 100), world), 
+							 new Fly(createVector(150, 100), world),
+							 new Rabbit(createVector(0, height-100), world)];
 }
 
 function draw() {

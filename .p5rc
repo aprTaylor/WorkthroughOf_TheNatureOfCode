@@ -6,6 +6,7 @@
     "RandomWalkerExponential",
     "Car",
     "vectorPerlin",
-    "Ecosystem"
+    "Ecosystem",
+    "my_project"
   ]
 }
