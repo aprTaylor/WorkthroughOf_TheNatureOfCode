@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Home Page</title>
+
+	<div class="sidebar">
+    <ul>
+      <li src="./Vector">Vector</li>
+      <li src="./vectorPerlin">Vector Perlin</li>
+      <li src="./RandomWalker">Random Walker</li>
+      <li src="./RandomWalkerExponential">Random Walker Exponential</li>
+      <li src="./Ecosystem">Ecosystem</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <iframe src=""> 
+    </iframe>
+    <div class="welcome">
+      Welcome to the Nature of Code Workthrough Sketch Book. Select an example on the left to get started.
+    </div>
+  </div>
+
+  <script>
+    const allLinks = document.querySelectorAll(".sidebar li");
+    allLinks.forEach(el => el.addEventListener("click", e => {
+      const src = e.target.getAttribute("src");
+      const iframe = document.querySelector("iframe");
+      iframe.setAttribute("src", src+"/index.html");
+    }))
+  </script>
+	<style>
+    html {
+      height: 100%;
+    }
+		body {
+      display: flex;
+      height: 100%;
+      margin: 0;
+    }
+    .sidebar {
+      width: 200px;
+    }
+    .content, iframe {
+      width: 100%; 
+      height: 100%;
+      border: 0;
+    }
+    iframe[src=""] {
+      display: none;
+    }
+    .welcome {
+      position: absolute;
+      top: 10px;
+    }
+    iframe:not([src=""]) + .welcome {
+      display: none;
+    }
+	</style>
+</head>
+<body>
+</body>
+</html>
