@@ -104,22 +104,17 @@ class Bird extends FlyingCreature {
   }
   setAcc(){
     this.acceleration = createVector(0.1, 0.1);
-    this.acceleration.setMag(0.5);
+    this.acceleration.setMag(2);
   }
   animate(){
-    if(this.dip){
-      this.dip = false;
-    }
-    else
-    this.acceleration = createVector(0, 0);
+    //this.acceleration = createVector(0, 0);
     //this.setAcc();
-    /*
-    this.acceleration = createVector(0.005, 0.02);
     this.acceleration.y *= this.dip?1:-1;
     this.frames--;
     if(this.frames < 0){
-      this.frames = 10;
+      this.frames = 1000;
       this.dip = !this.dip;
+      this.dir.y *= -1;
     }
     /*
     if(this.flags.birdDip){
