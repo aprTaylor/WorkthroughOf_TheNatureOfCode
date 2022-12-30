@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/agray5/WorkthroughOf_TheNatureOfCode#readme",
   "dependencies": {
-    "p5-manager": "^0.4.2"
+    "p5-manager": "^1.4.0"
   }
 }
